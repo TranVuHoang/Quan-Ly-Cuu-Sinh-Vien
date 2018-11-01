@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -40,6 +43,7 @@
        margin-top: 15px;
        float: left;
        border: none;
+       cursor: pointer;
     }
     #quaylai:hover{
       background-color: #BDBDBD;

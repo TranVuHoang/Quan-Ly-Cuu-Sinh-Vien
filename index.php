@@ -1,3 +1,7 @@
+<!--Kết nối php vs các trang khác-->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +56,7 @@
 			padding: 14px 20px;
 			border: none;
 			border-radius: 6px;
-			cursor: pointer;
+			cursor: pointer;					/*Hiệu ứng con trỏ khi rê chuột vào submit*/
 			margin-top: 10px;
 			float:center;
 			font-style: 12pt;

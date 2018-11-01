@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+if (isset($_POST['submit']))
+{
+    $_SESSION['username'] = $_POST['username'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +48,7 @@
        margin-top: 15px;
        float: left;
        border: none;
+       cursor: pointer;
     }
     #quaylai:hover{
       background-color: #BDBDBD;
@@ -64,6 +73,7 @@
           Remember me
         </label>
       </div>
+     
       <button type="submit" name = "submit" class="btn btn-primary" hef="#">Đăng nhập</button>
       <img id= 'quaylai' src="img/back.ico" width='45' height="40" onclick="back()"/>
     </form>
@@ -82,11 +92,11 @@
         echo '<p style="text-align: center;">Hãy điền đầy đủ thông tin!!!<p/>';
       }else{
         $password = md5($password);
-        $sql = "SELECT `name`, `password` FROM `signup` WHERE name='$username' and password='$password'";
+        $sql = "SELECT * FROM `signup` WHERE name='$username' and password='$password'";
         $query = mysqli_query($connect,$sql);
+        $_SESSION["name"] = 'username';
         $num_rows = mysqli_num_rows($query);
         if($num_rows !=0){
-          $_SESSION['name']=$username;
           header('Location: tintuc.php');
         }else{
           echo '<p style="text-align: center;">Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra lại!!!<p/>';

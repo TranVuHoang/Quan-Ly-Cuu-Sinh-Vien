@@ -8,19 +8,39 @@ session_start();
 	<title>Quản lí Cựu Sinh Viên</title>
 	<link rel="stylesheet" href="css\normalize.css"> <!--Reset CSS-->
 	<link rel="stylesheet" href="css\style.css"> <!--CSS cho Website-->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style >
+		#c{
+			color: white;
+			text-align: center;
+
+		}
+		.fas.fa-ad, .titleuser{
+			color: white;
+		}
+		.iconuser{
+			float: left;
+		}
+		h5 {
+			margin: 10px;
+		}
+	</style>
 </head>
 <body>
+
 	<div id = "container">
 		<div id = "menu">
 			<ul>
-				<h3>
-					<h5>Xin Chào</h5>
-					<?php
-						if(isset($_SESSION['name'])){
-						echo $_SESSION['name'];
-					}
-					?>
-				</h3>
+				<img src="img/iconuser3.png" class="iconuser" width='45' height="40">
+				<h5 class='titleuser' style="text-align: center;">XIN CHÀO</h5>
+				<h5 id="c">
+				 	<?php
+				    	if (isset($_SESSION['username'])){
+				    		
+				            echo $_SESSION['username'];
+				         }
+				 ?>
+				</h5>
 				<li><a href="#">Tin tức</a></li>
 				<li>
 					<a href="#">Cập nhật thông tin</a>
